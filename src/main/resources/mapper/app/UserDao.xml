@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hawki.app.dao.UserDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.hawki.app.entity.UserEntity" id="userMap">
+        <result property="id" column="id"/>
+        <result property="username" column="username"/>
+        <result property="password" column="password"/>
+        <result property="nickName" column="nick_name"/>
+        <result property="realName" column="real_name"/>
+        <result property="sex" column="sex"/>
+        <result property="phoneNum" column="phone_num"/>
+        <result property="email" column="email"/>
+        <result property="birthday" column="birthday"/>
+        <result property="education" column="education"/>
+        <result property="address" column="address"/>
+        <result property="housing" column="housing"/>
+        <result property="marriage" column="marriage"/>
+        <result property="income" column="income"/>
+        <result property="debt" column="debt"/>
+        <result property="insurance" column="insurance"/>
+        <result property="identity" column="identity"/>
+        <result property="ratingday" column="ratingday"/>
+        <result property="score" column="score"/>
+        <result property="stars" column="stars"/>
+        <result property="balance" column="balance"/>
+        <result property="avatar" column="avatar"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updateTime" column="update_time"/>
+    </resultMap>
+
+
+</mapper>

@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    username: zyoung
+    password: zyoung626
+    url: jdbc:mysql://rm-bp1u4a41j8e2358g3jo.mysql.rds.aliyuncs.com:3306/hawki?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  application:
+    name: hawki
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/**/*.xml
+  global-config:
+    db-config:
+      id-type: auto
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+server:
+  port: 8088
+
+logging:
+  level:
+    com.atwhu.gulimall: error #debug
+
+
+
+
