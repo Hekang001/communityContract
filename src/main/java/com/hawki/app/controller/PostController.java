@@ -1,8 +1,10 @@
 package com.hawki.app.controller;
 
 import java.util.Arrays;
+import java.util.List;
 import java.util.Map;
 
+import com.hawki.app.vo.PostListVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -41,6 +43,14 @@ public class PostController {
         return R.ok().put("page", page);
     }
 
+
+    /**
+     * 展示帖子
+     */
+    public R explore(){
+        List<PostListVo> postListVo = postService.getPosts();
+        return R.ok().put("data", postListVo);
+    }
 
     /**
      * 信息

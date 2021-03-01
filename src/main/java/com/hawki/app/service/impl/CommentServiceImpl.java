@@ -1,6 +1,9 @@
 package com.hawki.app.service.impl;
 
+import com.hawki.app.vo.CommentVo;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -24,6 +27,12 @@ public class CommentServiceImpl extends ServiceImpl<CommentDao, CommentEntity> i
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public List<CommentVo> getCommentListByPostId(Long id) {
+
+        return baseMapper.getCommentListByPostId(id);
     }
 
 }

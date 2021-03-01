@@ -15,7 +15,7 @@ import lombok.Data;
  * @date 2021-02-28 18:08:16
  */
 @Data
-@TableName("like")
+@TableName("like_post")
 public class LikeEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 

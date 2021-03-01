@@ -1,6 +1,8 @@
 package com.hawki.app.service.impl;
 
+import com.hawki.app.vo.UserVo;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.Map;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.core.metadata.IPage;
@@ -24,6 +26,29 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
         );
 
         return new PageUtils(page);
+    }
+
+    @Override
+    public UserVo login(Map<String, String> params) {
+        String username = params.get("username");
+        String password = params.get("password");
+        if(username != null && password != null){
+            UserEntity user = baseMapper.selectOne(new QueryWrapper<UserEntity>().eq("username", username));
+            if(user != null){
+                String pwd = user.getPassword();
+                BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
+                boolean matches = passwordEncoder.matches(password, pwd);
+                if(matches){
+                    UserVo userVo = new UserVo();
+                    userVo.setUserId(user.getId());
+                    userVo.setIdentifyName(user.getRealName());
+                    userVo.setIdentifyNumber(user.getIdentity());
+                    return userVo;
+                }
+            }
+        }
+
+        return null;
     }
 
 }

@@ -3,7 +3,9 @@ package com.hawki.app.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hawki.app.common.utils.PageUtils;
 import com.hawki.app.entity.CommentEntity;
+import com.hawki.app.vo.CommentVo;
 
+import java.util.List;
 import java.util.Map;
 
 /**
@@ -16,5 +18,7 @@ import java.util.Map;
 public interface CommentService extends IService<CommentEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    List<CommentVo> getCommentListByPostId(Long id);
 }
 

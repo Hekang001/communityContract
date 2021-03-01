@@ -3,12 +3,10 @@ package com.hawki.app.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.hawki.app.common.exception.BizCodeEnum;
+import com.hawki.app.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hawki.app.entity.UserEntity;
 import com.hawki.app.service.UserService;
@@ -30,6 +28,19 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /**
+     * 登录
+     */
+    @PostMapping("/login")
+    public R login(@RequestParam Map<String, String> params){
+        UserVo user = userService.login(params);
+
+        if(user != null){
+            return R.ok("登录成功").setData(user);
+        }else {
+            return R.error(BizCodeEnum.LOGINACCT_PASSWORD_INVAILD_EXCEPTION.getCode(), BizCodeEnum.LOGINACCT_PASSWORD_INVAILD_EXCEPTION.getMsg());
+        }
+    }
     /**
      * 列表
      */

@@ -2,7 +2,11 @@ package com.hawki.app.dao;
 
 import com.hawki.app.entity.CommentEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hawki.app.vo.CommentVo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 评论/转发
@@ -13,5 +17,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface CommentDao extends BaseMapper<CommentEntity> {
-	
+
+    List<CommentVo> getCommentListByPostId(@Param("postId") Long id);
 }

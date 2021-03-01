@@ -2,7 +2,11 @@ package com.hawki.app.dao;
 
 import com.hawki.app.entity.LikeEntity;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
+import com.hawki.app.vo.LikeVo;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * 
@@ -13,5 +17,6 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface LikeDao extends BaseMapper<LikeEntity> {
-	
+
+    List<LikeVo> getLikeListByPostId(@Param("postId") Long id);
 }
