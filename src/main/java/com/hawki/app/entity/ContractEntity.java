@@ -28,7 +28,7 @@ public class ContractEntity implements Serializable {
 	/**
 	 * 贷方id
 	 */
-	private Long creditD;
+	private Long creditId;
 	/**
 	 * 借方id
 	 */
@@ -64,7 +64,7 @@ public class ContractEntity implements Serializable {
 	/**
 	 * 用途
 	 */
-	private String usage;
+	private String purpose;
 	/**
 	 * 佣金
 	 */

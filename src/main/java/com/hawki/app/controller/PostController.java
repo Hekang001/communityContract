@@ -6,11 +6,7 @@ import java.util.Map;
 
 import com.hawki.app.vo.PostListVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hawki.app.entity.PostEntity;
 import com.hawki.app.service.PostService;
@@ -47,11 +43,20 @@ public class PostController {
     /**
      * 展示帖子
      */
+    @PostMapping("/explore")
     public R explore(){
         List<PostListVo> postListVo = postService.getPosts();
         return R.ok().put("data", postListVo);
     }
 
+    @PostMapping("/explore/detail")
+    public R detail(Long postId){
+        PostListVo postListVo = postService.getDetailById(postId);
+        return R.ok().setData(postListVo);
+    }
+
+//    @PostMapping("/explore/forward")
+//    public
     /**
      * 信息
      */

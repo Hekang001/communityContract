@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.hawki.app.dao.GroupDao">
+
+	<!-- 可根据自己的需求，是否要使用 -->
+    <resultMap type="com.hawki.app.entity.GroupEntity" id="groupMap">
+        <result property="id" column="id"/>
+        <result property="masterId" column="master_id"/>
+        <result property="gname" column="gname"/>
+        <result property="date" column="date"/>
+        <result property="notice" column="notice"/>
+        <result property="introduction" column="introduction"/>
+        <result property="avatar" column="avatar"/>
+        <result property="createTime" column="create_time"/>
+        <result property="updatetIme" column="updatet_ime"/>
+    </resultMap>
+
+
+</mapper>

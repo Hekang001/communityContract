@@ -12,25 +12,41 @@ import lombok.Data;
  * 
  * @author zyoung
  * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:16
+ * @date 2021-03-02 21:30:17
  */
 @Data
-@TableName("like_post")
-public class LikeEntity implements Serializable {
+@TableName("add_group")
+public class AddGroupEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 帖子
-	 */
-	private Long postId;
-	/**
-	 * 点赞人id
-	 */
-	private Long usersId;
 	/**
 	 * 
 	 */
 	@TableId
 	private Long id;
+	/**
+	 * 群号
+	 */
+	private Long groupid;
+	/**
+	 * 用户id
+	 */
+	private Long userid;
+	/**
+	 * 
+	 */
+	private String content;
+	/**
+	 * 
+	 */
+	private Integer status;
+	/**
+	 * 
+	 */
+	private Date createtime;
+	/**
+	 * 
+	 */
+	private Date updatetime;
 
 }

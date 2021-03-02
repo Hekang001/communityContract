@@ -16,12 +16,12 @@
     <resultMap id="CommentVo" type="com.hawki.app.vo.CommentVo">
         <result property="content" column="content"/>
         <result property="id" column="id"/>
-        <result property="nickname" column="nickname"/>
+        <result property="nickname" column="nick_name"/>
     </resultMap>
-    <select id="getCommentListByPostId" resultType="com.hawki.app.vo.CommentVo" parameterType="java.lang.Long">
-        select user.nickname, user.id, cm.content from comment cm
+    <select id="getCommentListByPostId" resultMap="CommentVo" parameterType="java.lang.Long">
+        select user.nick_name, user.id, cm.content from comment cm
             left join user on cm.userid = user.id
-        where comment.postid=#{postId}
+        where cm.postid=#{postId}
     </select>
 
 

@@ -1,6 +1,5 @@
 package com.hawki.app.vo;
 
-import com.hawki.app.entity.LikeEntity;
 import lombok.Data;
 
 import java.math.BigDecimal;
@@ -8,7 +7,7 @@ import java.util.Date;
 import java.util.List;
 
 @Data
-public class PostListVo {
+public class PostDetailVo {
 
     /**
      *
@@ -17,7 +16,7 @@ public class PostListVo {
     /**
      * 发贴者账号
      */
-    private String nickName;
+    private String nickname;
 
     private String avatar;
 
@@ -65,7 +64,7 @@ public class PostListVo {
      * 原帖
      */
     private Long forwardId;
-//    /**
+    //    /**
 //     * 推送 0仅好友
 //     */
 //    private Integer push;

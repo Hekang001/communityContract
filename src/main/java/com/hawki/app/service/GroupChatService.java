@@ -2,8 +2,7 @@ package com.hawki.app.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hawki.app.common.utils.PageUtils;
-import com.hawki.app.entity.ContractEntity;
-import com.hawki.app.vo.ContractInfoVo;
+import com.hawki.app.entity.GroupChatEntity;
 
 import java.util.Map;
 
@@ -12,12 +11,10 @@ import java.util.Map;
  *
  * @author zyoung
  * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:18
+ * @date 2021-03-02 21:30:16
  */
-public interface ContractService extends IService<ContractEntity> {
+public interface GroupChatService extends IService<GroupChatEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
-
-    ContractInfoVo getByDebtId(Long id);
 }
 

@@ -20,5 +20,7 @@ public interface PostService extends IService<PostEntity> {
     PageUtils queryPage(Map<String, Object> params);
 
     List<PostListVo> getPosts();
+
+    PostListVo getDetailById(Long postId);
 }
 

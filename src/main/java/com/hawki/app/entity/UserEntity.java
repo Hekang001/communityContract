@@ -43,7 +43,6 @@ public class UserEntity implements Serializable {
 	private String realName;
 	/**
 	 * 性别1男0女
-
 	 */
 	private Integer sex;
 	/**
@@ -106,6 +105,10 @@ public class UserEntity implements Serializable {
 	 * 余额
 	 */
 	private BigDecimal balance;
+	/**
+	 * 工作行业
+	 */
+	private String job;
 	/**
 	 * 头像地址
 	 */

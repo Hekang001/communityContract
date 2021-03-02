@@ -50,19 +50,38 @@ public class PostServiceImpl extends ServiceImpl<PostDao, PostEntity> implements
     @Override
     public List<PostListVo> getPosts() {
         List<PostEntity> postEntities = baseMapper.selectList(new QueryWrapper<PostEntity>());
-        List<PostListVo> collect = postEntities.stream().map(post -> {
+        return postEntities.stream().map(post -> {
             PostListVo postListVo = new PostListVo();
-            BeanUtils.copyProperties(postListVo, post);
+            BeanUtils.copyProperties(post,postListVo);
+            if(post.getForwardId() == -1)postListVo.setType(0);
+            else postListVo.setType(1);
             Long userid = post.getUserid();
             UserEntity userEntity = userService.getById(userid);
-            BeanUtils.copyProperties(postListVo, userEntity);
-            List<LikeVo> likeVoList = likeService.getLikeListByPostId(post.getId());
+            BeanUtils.copyProperties(userEntity, postListVo, "id");
+            Long postId = post.getId();
+            List<LikeVo> likeVoList = likeService.getLikeListByPostId(postId);
             postListVo.setLikes(likeVoList);
             List<CommentVo> commentVos = commentService.getCommentListByPostId(post.getId());
             postListVo.setComments(commentVos);
             return postListVo;
         }).collect(Collectors.toList());
-        return collect;
+    }
+
+    @Override
+    public PostListVo getDetailById(Long postId) {
+        PostEntity post = baseMapper.selectById(postId);
+        PostListVo postListVo = new PostListVo();
+        BeanUtils.copyProperties(post, postListVo);
+        if(post.getForwardId() == -1)postListVo.setType(0);
+        else postListVo.setType(1);
+        Long userid = post.getUserid();
+        UserEntity userEntity = userService.getById(userid);
+        BeanUtils.copyProperties(userEntity, postListVo, "id");
+        List<LikeVo> likeVoList = likeService.getLikeListByPostId(postId);
+        postListVo.setLikes(likeVoList);
+        List<CommentVo> commentVos = commentService.getCommentListByPostId(post.getId());
+        postListVo.setComments(commentVos);
+        return postListVo;
     }
 
 }

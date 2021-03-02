@@ -1,6 +1,12 @@
 package com.hawki.app.service.impl;
 
+import com.hawki.app.service.ContractService;
+import com.hawki.app.service.FriendService;
+import com.hawki.app.vo.ContractInfoVo;
+import com.hawki.app.vo.UserInfoVo;
 import com.hawki.app.vo.UserVo;
+import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import java.util.Map;
@@ -18,6 +24,11 @@ import com.hawki.app.service.UserService;
 @Service("userService")
 public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements UserService {
 
+    @Autowired
+    FriendService friendService;
+
+    @Autowired
+    ContractService contractService;
     @Override
     public PageUtils queryPage(Map<String, Object> params) {
         IPage<UserEntity> page = this.page(
@@ -49,6 +60,28 @@ public class UserServiceImpl extends ServiceImpl<UserDao, UserEntity> implements
         }
 
         return null;
+    }
+
+    @Override
+    public UserInfoVo getUserInfoById(Long id, Long myId) {
+
+        UserEntity userEntity = baseMapper.selectById(id);
+        UserInfoVo userInfoVo = new UserInfoVo();
+        BeanUtils.copyProperties(userEntity, userInfoVo);
+        userInfoVo.setGender(userEntity.getSex()==1?"男":"女");
+        int riskLevel = 2;
+        if(userEntity.getStars() > 3) riskLevel = 0;
+        else if(userEntity.getStars() > 1) riskLevel = 1;
+        userInfoVo.setRiskLevel(riskLevel);
+        Boolean isFriend = friendService.judgeFriendship(id, myId);
+        userInfoVo.setIsFriend(isFriend);
+        if(!isFriend){
+            userInfoVo.setNickName("");
+            userInfoVo.setIdentity("");
+        }
+        ContractInfoVo contractInfoVo = contractService.getByDebtId(id);
+        BeanUtils.copyProperties(contractInfoVo, userInfoVo);
+        return userInfoVo;
     }
 
 }

@@ -8,29 +8,41 @@ import java.util.Date;
 import lombok.Data;
 
 /**
- * 
+ * 好友
  * 
  * @author zyoung
  * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:16
+ * @date 2021-03-02 21:30:16
  */
 @Data
-@TableName("like_post")
-public class LikeEntity implements Serializable {
+@TableName("friend")
+public class FriendEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 帖子
-	 */
-	private Long postId;
-	/**
-	 * 点赞人id
-	 */
-	private Long usersId;
 	/**
 	 * 
 	 */
 	@TableId
 	private Long id;
+	/**
+	 * 我的账号
+	 */
+	private Long userid;
+	/**
+	 * 好友账号
+	 */
+	private Long frid;
+	/**
+	 * 好友备注
+	 */
+	private String name;
+	/**
+	 * 
+	 */
+	private Date createTime;
+	/**
+	 * 
+	 */
+	private Date updateTime;
 
 }

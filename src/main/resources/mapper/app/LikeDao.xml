@@ -11,10 +11,10 @@
     </resultMap>
     <resultMap id="likeVo" type="com.hawki.app.vo.LikeVo">
         <result property="userId" column="users_id"/>
-        <result property="username" column="username" />
+        <result property="nickname" column="nick_name" />
     </resultMap>
-    <select id="getLikeListByPostId" resultType="com.hawki.app.vo.LikeVo" parameterType="java.lang.Long">
-        select lp.users_id, user.nickname from like_post lp
+    <select id="getLikeListByPostId" resultMap="likeVo" parameterType="java.lang.Long">
+        select lp.users_id, user.nick_name from like_post lp
             left join user on lp.users_id = user.id
         where lp.post_id = #{postId}
     </select>

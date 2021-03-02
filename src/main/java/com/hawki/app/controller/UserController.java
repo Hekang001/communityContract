@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Map;
 
 import com.hawki.app.common.exception.BizCodeEnum;
+import com.hawki.app.vo.UserInfoVo;
 import com.hawki.app.vo.UserVo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -56,12 +57,12 @@ public class UserController {
     /**
      * 信息
      */
-    @RequestMapping("/info/{id}")
+    @RequestMapping("/explore/userInfo")
     //@RequiresPermissions("app:user:info")
-    public R info(@PathVariable("id") Long id){
-		UserEntity user = userService.getById(id);
+    public R info(Long id, Long myId){
+		UserInfoVo user = userService.getUserInfoById(id, myId);
 
-        return R.ok().put("user", user);
+        return R.ok().put("data", user);
     }
 
     /**
