@@ -49,14 +49,37 @@ public class PostController {
         return R.ok().put("data", postListVo);
     }
 
+    /**
+     * 用户信息详情
+     * @param postId
+     * @return
+     */
     @PostMapping("/explore/detail")
     public R detail(Long postId){
         PostListVo postListVo = postService.getDetailById(postId);
         return R.ok().setData(postListVo);
     }
 
-//    @PostMapping("/explore/forward")
-//    public
+    /**
+     * 转发
+     * @param postId
+     * @param userId
+     * @return
+     */
+    @PostMapping("/explore/forward")
+    public R forward(Long postId, Long userId){
+        postService.forward(postId, userId);
+        return R.ok("转发成功");
+    }
+
+    /**
+     * 发帖
+     */
+    @PostMapping("/explore/posting")
+    public R forward(@RequestParam Map<String, Object> params){
+        postService.posting(params);
+        return R.ok("转发成功");
+    }
     /**
      * 信息
      */

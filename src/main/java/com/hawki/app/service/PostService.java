@@ -22,5 +22,9 @@ public interface PostService extends IService<PostEntity> {
     List<PostListVo> getPosts();
 
     PostListVo getDetailById(Long postId);
+
+    void forward(Long postId, Long userId);
+
+    void posting(Map<String, Object> params);
 }
 

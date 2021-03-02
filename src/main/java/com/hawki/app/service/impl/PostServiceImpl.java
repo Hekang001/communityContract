@@ -11,6 +11,8 @@ import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.math.BigDecimal;
+import java.util.Date;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
@@ -82,6 +84,28 @@ public class PostServiceImpl extends ServiceImpl<PostDao, PostEntity> implements
         List<CommentVo> commentVos = commentService.getCommentListByPostId(post.getId());
         postListVo.setComments(commentVos);
         return postListVo;
+    }
+
+    @Override
+    public void forward(Long postId, Long userId) {
+        PostEntity postEntity = baseMapper.selectById(postId);
+        postEntity.setId(null);
+        postEntity.setUserid(userId);
+        postEntity.setUpdatetime(new Date());
+        postEntity.setForwardId(postId);
+        baseMapper.insert(postEntity);
+    }
+
+    @Override
+    public void posting(Map<String, Object> params) {
+        PostEntity postEntity = new PostEntity();
+        postEntity.setUserid((Long) params.get("userId"));
+        postEntity.setContent((String) params.get("content"));
+        postEntity.setForwardId(-1L);
+        postEntity.setForward((Integer) params.get("canForword"));
+        postEntity.setPush((Integer) params.get("pushPeople"));
+        postEntity.setAmount((BigDecimal) params.get("amount"));
+        baseMapper.insert(postEntity);
     }
 
 }

@@ -40,7 +40,6 @@ public class AddFriendController {
     //@RequiresPermissions("app:addfriend:list")
     public R list(@RequestParam Map<String, Object> params){
         PageUtils page = addFriendService.queryPage(params);
-
         return R.ok().put("page", page);
     }
 
@@ -52,7 +51,6 @@ public class AddFriendController {
     //@RequiresPermissions("app:addfriend:info")
     public R info(@PathVariable("id") Long id){
 		AddFriendEntity addFriend = addFriendService.getById(id);
-
         return R.ok().put("addFriend", addFriend);
     }
 
