@@ -97,14 +97,20 @@ public class PostServiceImpl extends ServiceImpl<PostDao, PostEntity> implements
     }
 
     @Override
-    public void posting(Map<String, Object> params) {
+    public void posting(Map<String, String> params) {
         PostEntity postEntity = new PostEntity();
-        postEntity.setUserid((Long) params.get("userId"));
-        postEntity.setContent((String) params.get("content"));
+        postEntity.setUserid(Long.parseLong(params.get("userId")));
+        postEntity.setContent(params.get("content"));
         postEntity.setForwardId(-1L);
-        postEntity.setForward((Integer) params.get("canForword"));
-        postEntity.setPush((Integer) params.get("pushPeople"));
-        postEntity.setAmount((BigDecimal) params.get("amount"));
+        postEntity.setForward(Integer.parseInt(params.get("canForword")));
+        postEntity.setPush(Integer.parseInt(params.get("pushPeople")));
+        postEntity.setAmount(new BigDecimal(params.get("amount")));
+        postEntity.setPermission(Integer.parseInt(params.get("permission")));
+        postEntity.setInterest(new BigDecimal(params.get("interest")));
+        postEntity.setDuetime(Integer.parseInt(params.get("duetime")));
+        postEntity.setStatus(0);
+        postEntity.setUpdatetime(new Date());
+        postEntity.setCreateTime(new Date());
         baseMapper.insert(postEntity);
     }
 

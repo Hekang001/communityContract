@@ -76,9 +76,9 @@ public class PostController {
      * 发帖
      */
     @PostMapping("/explore/posting")
-    public R forward(@RequestParam Map<String, Object> params){
+    public R forward(@RequestParam Map<String, String> params){
         postService.posting(params);
-        return R.ok("转发成功");
+        return R.ok("发帖成功");
     }
     /**
      * 信息

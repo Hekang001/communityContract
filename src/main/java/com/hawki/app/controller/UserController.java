@@ -56,9 +56,9 @@ public class UserController {
     /**
      * 用户基本信息
      */
-    @RequestMapping("/basicInfo")
-    public R basicInfo(){
-//        userService.getUserBasicInfo();
+    @RequestMapping("/careerInfo")
+    public R careerInfo(){
+//        JobInfoVo jobInfoVo = userService.getCareerInfo();
         return R.ok();
     }
 

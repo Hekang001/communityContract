@@ -37,7 +37,7 @@ public class PostEntity implements Serializable {
 	/**
 	 * 还款期限
 	 */
-	private Date duetime;
+	private Integer duetime;
 	/**
 	 * 利息
 	 */
