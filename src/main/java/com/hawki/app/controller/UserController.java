@@ -53,6 +53,14 @@ public class UserController {
         return R.ok().put("page", page);
     }
 
+    /**
+     * 用户基本信息
+     */
+    @RequestMapping("/basicInfo")
+    public R basicInfo(){
+//        userService.getUserBasicInfo();
+        return R.ok();
+    }
 
     /**
      * 信息
