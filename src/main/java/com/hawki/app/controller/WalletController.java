@@ -3,12 +3,9 @@ package com.hawki.app.controller;
 import java.util.Arrays;
 import java.util.Map;
 
+import com.hawki.app.vo.WalletVo;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import com.hawki.app.entity.WalletEntity;
 import com.hawki.app.service.WalletService;
@@ -53,6 +50,11 @@ public class WalletController {
         return R.ok().put("wallet", wallet);
     }
 
+    @PostMapping("/walletInfo")
+    public R walletInfo(Long userId){
+        WalletVo walletVo = walletService.getWalletInfoByUserId(userId);
+        return R.ok().put("data", walletVo);
+    }
     /**
      * 保存
      */

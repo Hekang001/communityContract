@@ -3,6 +3,7 @@ package com.hawki.app.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.hawki.app.common.utils.PageUtils;
 import com.hawki.app.entity.WalletEntity;
+import com.hawki.app.vo.WalletVo;
 
 import java.util.Map;
 
@@ -16,5 +17,7 @@ import java.util.Map;
 public interface WalletService extends IService<WalletEntity> {
 
     PageUtils queryPage(Map<String, Object> params);
+
+    WalletVo getWalletInfoByUserId(Long userId);
 }
 

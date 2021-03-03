@@ -29,6 +29,8 @@ public class WalletEntity implements Serializable {
 	 * 卡号
 	 */
 	private String cid;
+
+	private Long userId;
 	/**
 	 * 银行
 	 */
