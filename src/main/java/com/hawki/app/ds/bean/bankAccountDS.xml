@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于描述银行客户的基本信息结构. -->
+<!-- 为了应对系统的变化,采用了RTTI对信息结构进行控制和整合 -->
+<elements>
+	 <!-- 基本结构信息  -->
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>性别</description>
+		<!-- 调用方法名标识 -->
+		<name>Gender</name>
+		<!-- 外映射标签 -->
+		<label>1</label>
+		<!-- 空缺值 -->
+		<nullValue>-1</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<attribute>
+		<description>年龄</description>
+		<name>Age</name>
+		<label>2</label>
+		<nullValue>-1</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<!-- 主要用于信息熵筛选的时候使用,建议直接采用用户的信用度 -->
+	<groupName>CreditRate</groupName>
+	<!-- 用户的信用度调用标识 -->
+	<rate>CreditRate</rate>
+</elements>

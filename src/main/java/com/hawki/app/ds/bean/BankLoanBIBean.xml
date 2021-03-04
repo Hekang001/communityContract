@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于描述银行贷款的基本信息结构. -->
+<!-- 为了应对系统的变化,采用了RTTI对信息结构进行控制和整合 -->
+<elements>
+	<!-- 基本结构信息  -->
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>个人信用评级值</description>
+		<!-- 调用方法名标识 -->
+		<name>CreditRateValue</name>
+		<!-- 外映射标签 -->
+		<label>1</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>贷款类型</description>
+		<!-- 调用方法名标识 -->
+		<name>LoanTypeValue</name>
+		<!-- 外映射标签 -->
+		<label>2</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>利率与无风险一年期国债之比</description>
+		<!-- 调用方法名标识 -->
+		<name>RateDebtValue</name>
+		<!-- 外映射标签 -->
+		<label>3</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>贷款年限</description>
+		<!-- 调用方法名标识 -->
+		<name>LoanYearValue</name>
+		<!-- 外映射标签 -->
+		<label>4</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>贷款月还款额与家庭月收入之比</description>
+		<!-- 调用方法名标识 -->
+		<name>RevertIncomeValue</name>
+		<!-- 外映射标签 -->
+		<label>5</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>本人担保得分</description>
+		<!-- 调用方法名标识 -->
+		<name>GuaranteeValue</name>
+		<!-- 外映射标签 -->
+		<label>6</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>逾期还款次数</description>
+		<!-- 调用方法名标识 -->
+		<name>OverDateValue</name>
+		<!-- 外映射标签 -->
+		<label>7</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>抵押品比率(贷款数额占抵押品价值的比率)</description>
+		<!-- 调用方法名标识 -->
+		<name>GageRateValue</name>
+		<!-- 外映射标签 -->
+		<label>8</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.RatioScaledVar</operate>
+	</attribute>
+	<!-- 主要用于信息熵筛选的时候使用,这个地方也用于进行logic计算的时候作为结果进行使用 -->
+	<groupName>Group</groupName>
+</elements>

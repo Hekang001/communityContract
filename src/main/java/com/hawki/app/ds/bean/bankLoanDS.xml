@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- 用于描述银行贷款的基本信息结构. -->
+<!-- 为了应对系统的变化,采用了RTTI对信息结构进行控制和整合 -->
+<elements>
+	 <!-- 基本结构信息  -->
+	<attribute>
+		<!-- 结构信息注释 -->
+		<description>100m</description>
+		<!-- 调用方法名标识 -->
+		<name>X1</name>
+		<!-- 外映射标签 -->
+		<label>1</label>
+		<!-- 空缺值 -->
+		<nullValue>0</nullValue>
+		<!-- 操纵方法 -->
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<attribute>
+		<description>200m</description>
+		<name>X2</name>
+		<label>2</label>
+		<nullValue>0</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<attribute>
+		<description>400m</description>
+		<name>X3</name>
+		<label>3</label>
+		<nullValue>0</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<attribute>
+		<description>800m</description>
+		<name>X4</name>
+		<label>4</label>
+		<nullValue>0</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+		<attribute>
+		<description>1500m</description>
+		<name>X5</name>
+		<label>5</label>
+		<nullValue>0</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<attribute>
+		<description>5000m</description>
+		<name>X6</name>
+		<label>6</label>
+		<nullValue>0</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<attribute>
+		<description>1000m</description>
+		<name>X7</name>
+		<label>7</label>
+		<nullValue>0</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<attribute>
+		<description>42000m</description>
+		<name>X8</name>
+		<label>8</label>
+		<nullValue>0</nullValue>
+		<operate>com.hawki.app.ds.valuecompute.NominalVarUse</operate>
+	</attribute>
+	<!-- 主要用于信息熵筛选的时候使用,这个地方也用于进行logic计算的时候作为结果进行使用 -->
+	<groupName>Group</groupName>
+</elements>
