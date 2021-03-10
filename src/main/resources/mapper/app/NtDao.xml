@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hawki.app.dao.NtDao">
+<mapper namespace="com.CC.app.dao.NtDao">
 
 	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.hawki.app.entity.NtEntity" id="ntMap">
+    <resultMap type="com.CC.app.entity.NtEntity" id="ntMap">
         <result property="id" column="id"/>
         <result property="infoid" column="infoid"/>
         <result property="tag" column="tag"/>

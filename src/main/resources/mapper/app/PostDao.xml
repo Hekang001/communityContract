@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hawki.app.dao.PostDao">
+<mapper namespace="com.CC.app.dao.PostDao">
 
 	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.hawki.app.entity.PostEntity" id="postMap">
+    <resultMap type="com.CC.app.entity.PostEntity" id="postMap">
         <result property="id" column="id"/>
         <result property="userid" column="userid"/>
         <result property="amount" column="amount"/>

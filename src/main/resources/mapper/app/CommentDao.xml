@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.hawki.app.dao.CommentDao">
+<mapper namespace="com.CC.app.dao.CommentDao">
 
 	<!-- 可根据自己的需求，是否要使用 -->
-    <resultMap type="com.hawki.app.entity.CommentEntity" id="commentMap">
+    <resultMap type="com.CC.app.entity.CommentEntity" id="commentMap">
         <result property="id" column="id"/>
         <result property="userid" column="userid"/>
         <result property="postid" column="postid"/>
@@ -13,7 +13,7 @@
         <result property="createTime" column="create_time"/>
         <result property="updateTime" column="update_time"/>
     </resultMap>
-    <resultMap id="CommentVo" type="com.hawki.app.vo.CommentVo">
+    <resultMap id="CommentVo" type="com.CC.app.vo.CommentVo">
         <result property="content" column="content"/>
         <result property="id" column="id"/>
         <result property="nickname" column="nick_name"/>
