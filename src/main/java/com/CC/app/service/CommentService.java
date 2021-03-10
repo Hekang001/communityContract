@@ -10,10 +10,6 @@ import java.util.Map;
 
 /**
  * 评论/转发
- *
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:18
  */
 public interface CommentService extends IService<CommentEntity> {
 

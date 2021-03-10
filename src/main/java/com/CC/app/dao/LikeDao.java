@@ -8,13 +8,6 @@ import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
-/**
- * 
- * 
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:16
- */
 @Mapper
 public interface LikeDao extends BaseMapper<LikeEntity> {
 

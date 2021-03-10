@@ -7,30 +7,16 @@ import java.io.Serializable;
 import java.util.Date;
 import lombok.Data;
 
-/**
- * 
- * 
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:16
- */
 @Data
 @TableName("group_member")
 public class GroupMemberEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
 	@TableId
 	private Long id;
-	/**
-	 * 
-	 */
+
 	private Long userid;
-	/**
-	 * 
-	 */
+
 	private Long groupid;
 	/**
 	 * 同意待定拒绝踢出

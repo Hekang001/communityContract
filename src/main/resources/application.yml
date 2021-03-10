@@ -1,7 +1,7 @@
 spring:
   datasource:
-    username: zyoung
-    password: zyoung626
+    username: hekang
+    password: 12345678
     url: jdbc:mysql://rm-bp1u4a41j8e2358g3jo.mysql.rds.aliyuncs.com:3306/hawki?useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=Asia/Shanghai&allowPublicKeyRetrieval=true
     driver-class-name: com.mysql.cj.jdbc.Driver
 

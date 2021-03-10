@@ -15,14 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.CC.app.service.GroupMemberService;
 
-
-/**
- * 
- *
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:16
- */
 @RestController
 @RequestMapping("app/groupmember")
 public class GroupMemberController {

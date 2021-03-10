@@ -15,14 +15,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.CC.app.service.SysteminformationService;
 
-
-/**
- * 
- *
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:17
- */
 @RestController
 @RequestMapping("app/systeminformation")
 public class SysteminformationController {

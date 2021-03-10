@@ -15,10 +15,6 @@ import com.CC.app.service.AddFriendService;
 
 /**
  * 加好友
- *
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-03-02 21:30:17
  */
 @RestController
 @RequestMapping("app/addfriend")

@@ -10,10 +10,7 @@ import java.util.List;
 
 /**
  * 评论/转发
- * 
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:18
+ *
  */
 @Mapper
 public interface CommentDao extends BaseMapper<CommentEntity> {

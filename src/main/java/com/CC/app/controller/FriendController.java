@@ -18,9 +18,6 @@ import com.CC.app.service.FriendService;
 
 /**
  * 好友
- *
- * @author zyoung
- * @email yz3204190017@gmail.com
  * @date 2021-03-02 21:30:16
  */
 @RestController

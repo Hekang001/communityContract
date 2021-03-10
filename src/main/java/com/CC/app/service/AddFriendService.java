@@ -8,10 +8,6 @@ import java.util.Map;
 
 /**
  * 加好友
- *
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-03-02 21:30:17
  */
 public interface AddFriendService extends IService<AddFriendEntity> {
 

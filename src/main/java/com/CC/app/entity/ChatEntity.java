@@ -9,19 +9,12 @@ import lombok.Data;
 
 /**
  * 私聊
- * 
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:18
  */
 @Data
 @TableName("chat")
 public class ChatEntity implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * 
-	 */
 	@TableId
 	private Long id;
 	/**
@@ -40,13 +33,9 @@ public class ChatEntity implements Serializable {
 	 * 已读否
 	 */
 	private Integer status;
-	/**
-	 * 
-	 */
+
 	private Date createTime;
-	/**
-	 * 
-	 */
+
 	private Date updateTime;
 
 }

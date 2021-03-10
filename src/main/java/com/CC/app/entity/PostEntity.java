@@ -10,10 +10,6 @@ import lombok.Data;
 
 /**
  * 发帖
- * 
- * @author zyoung
- * @email yz3204190017@gmail.com
- * @date 2021-02-28 18:08:17
  */
 @Data
 @TableName("post")
